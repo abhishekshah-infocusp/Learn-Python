@@ -1,0 +1,140 @@
+
+
+-------------------------------------------Basic Models----------------------------------------------
+Pydantic Person Object:
+name='Abhishek' age=26 email='abhishek.shah@infocusp.com'
+
+After providing wrong type of age:
+name='Abhishek' age=26 email='p2@infocusp.com'
+Validation Error:
+2 validation errors for Person
+age
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='26dcz', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
+email
+  Input should be a valid string [type=string_type, input_value=45, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+
+
+We can mutate the object:
+name='Abhi' age=26 email='abhishek.shah@infocusp.com'
+
+
+-------------------------------------------Validateion Exceptions----------------------------------------------
+
+Validation Exceptions:
+[{'type': 'int_parsing', 'loc': ('age',), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': '26dcz', 'url': 'https://errors.pydantic.dev/2.11/v/int_parsing'}, {'type': 'string_type', 'loc': ('email',), 'msg': 'Input should be a valid string', 'input': 45, 'url': 'https://errors.pydantic.dev/2.11/v/string_type'}]
+
+Validation Exceptions in JSON format:
+[{"type":"int_parsing","loc":["age"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"26dcz","url":"https://errors.pydantic.dev/2.11/v/int_parsing"},{"type":"string_type","loc":["email"],"msg":"Input should be a valid string","input":45,"url":"https://errors.pydantic.dev/2.11/v/string_type"}]
+
+
+--------------------------------------- Deserializing Data----------------------------------------------
+
+Deserialized Data using dictionary:
+name='Abhishek' age=26 email='myemail@gmail.com'
+
+Deserialized Data using JSON:
+name='Abhishek' age=26 email='myemail@gmail.com'
+
+
+-------------------------------------------Serialization----------------------------------------------
+
+Serialized Data using dictionary:
+{'name': 'Abhishek', 'age': 26, 'email': 'myemail@gmail.com'}
+
+Serialized Data using JSON:
+{"name":"Abhishek","age":26,"email":"myemail@gmail.com"}
+
+Serialized Data using JSON with indent:
+{
+    "name": "Abhishek",
+    "age": 26,
+    "email": "myemail@gmail.com"
+}
+<class 'dict'>
+
+JSON Schema:
+{
+    "properties": {
+        "name": {
+            "title": "Name",
+            "type": "string"
+        },
+        "age": {
+            "title": "Age",
+            "type": "integer"
+        },
+        "email": {
+            "title": "Email",
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "age",
+        "email"
+    ],
+    "title": "Person",
+    "type": "object"
+}
+
+
+-------------------------------------------Field Customisations Incorrect Input ----------------------------------------------
+
+Wrong inputs with provided field customizations and restrictions:
+
+Validation Error:
+3 validation errors for Employee
+name
+  String should have at least 1 character [type=string_too_short, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_too_short
+dob
+  Field required [type=missing, input_value={'name': '', 'email': 'du... 'other_benifits': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+salary
+  Input should be greater than 0 [type=greater_than, input_value=-10, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/greater_than
+
+
+-------------------------------------------Field Customisations Correct Input ----------------------------------------------
+
+
+Employee Object:
+employee_id=0 name='Abhishek Shah' email='abhishek.shah@infocusp.com' department=<Department.IT: 'IT'> other_benifits=True
+Salary:  75000.0
+DOB:  1998-06-15
+
+
+-------------------------------------------Custom Validator for DOB ----------------------------------------------
+
+Validation Error:
+1 validation error for Employee
+dob
+  Value error, Employee must be at least 18 years old. [type=value_error, input_value='2020-06-15', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/value_error
+
+
+-------------------------------------------Custom Validator for model ----------------------------------------------
+
+Validation Error:
+1 validation error for Employee
+  Value error, Only IT employees are allowed for other benifits. [type=value_error, input_value={'name': 'Abhishek Shah',... 'other_benifits': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/value_error
+
+
+-------------------------------------------Custom Validator for Methods ----------------------------------------------
+
+
+Custom Validator for Methods:
+Successfully created employee object:
+employee_id=0 name='Abhishek Shah' email='abhishek.shah@infocusp.com' department=<Department.HR: 'HR'> other_benifits=False
+Sending email to abhishek.shah@infocusp.com...
+
+        Dear Abhishek Shah,
+
+        Thank you for choosing InfocusP Innovations!
+        You owe $100.00 for the following items:
+
+        ['item1', 'item2']
+        
