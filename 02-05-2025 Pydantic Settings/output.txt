@@ -1,0 +1,6 @@
+odict_values(['http://example.com', 'abhishekdf', 'secret123', '1234567890abcdef'])
+Database Configuration:
+Database Host:  http://example.com/
+Database User:  abhishekdf
+Database Password secret123
+API Key:  1234567890abcdef
