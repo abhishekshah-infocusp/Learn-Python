@@ -2,7 +2,8 @@ from typing import Annotated, Self
 from pydantic import BaseModel, Field, field_validator, model_validator, validate_call, EmailStr, PositiveFloat # type: ignore
 from datetime import date
 import time
-from Department import Department
+# from .Department import Department
+from day_01_05_2025_pydantic.department import Department
 
 class Employee(BaseModel):
     employee_id : int = Field(default_factory=int, frozen = True) # Frozen makes the field immutable

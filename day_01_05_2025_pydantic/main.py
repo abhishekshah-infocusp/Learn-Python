@@ -1,7 +1,7 @@
-from Person import Person
+from day_01_05_2025_pydantic.person import Person
 from pydantic import ValidationError, Field # type: ignore
 import json
-from Employee import Employee
+from day_01_05_2025_pydantic.employee import Employee
 
 print("\n\n-------------------------------------------Basic Models----------------------------------------------")
 p1 = Person(name="Abhishek", age=26, email="abhishek.shah@infocusp.com")

@@ -1,9 +1,9 @@
 from dataclasses import asdict, astuple, dataclass, field, fields
-from Circle_Regular import Circle_Regular as CR
-from Circle_Dataclass import Circle_Dataclass as CD
-from Circle_Regular_Immutable import Circle_Regular_Immutable as CRI
-from Circle_Dataclass_Immutable import Circle_Dataclass_Immutable as CDI
-from Circle_Dataclass_postinit import Circle_DataclassPostInit as CDP
+from day_30_04_2025_dataclasses.circle_regular import Circle_Regular as CR
+from day_30_04_2025_dataclasses.circle_dataclass import Circle_Dataclass as CD
+from day_30_04_2025_dataclasses.circle_regular_immutable import Circle_Regular_Immutable as CRI
+from day_30_04_2025_dataclasses.circle_dataclass_immutable import Circle_Dataclass_Immutable as CDI
+from day_30_04_2025_dataclasses.circle_dataclass_postinit import Circle_DataclassPostInit as CDP
 
 print("-------------------------------------------String Repr-----------------------------------------------")
 print("Circle Class (Regular):")
