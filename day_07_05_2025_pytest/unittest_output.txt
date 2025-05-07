@@ -1,0 +1,8 @@
+test_insufficient_deposit (unittest_demo.TestBankOperations.test_insufficient_deposit) ... ok
+test_negative_deposit (unittest_demo.TestBankOperations.test_negative_deposit) ... ok
+test_negative_withdrawal (unittest_demo.TestBankOperations.test_negative_withdrawal) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.3.5, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/abhishek.shah/Desktop/Python_Learning_Repo/Learn-Python/day_07_05_2025_pytest
+collecting ... collected 2 items
+
+pytest_demo.py::test_insufficient_deposit PASSED                         [ 50%]
+pytest_demo.py::test_negative_deposit PASSED                             [100%]
+
+============================== 2 passed in 0.00s ===============================
